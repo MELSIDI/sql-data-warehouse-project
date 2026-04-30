@@ -21,8 +21,11 @@ CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN
 	DECLARE @batch_start_time DATETIME, @batch_end_time DATETIME, 
 	@start_time DATETIME, @end_time DATETIME;
+	DECLARE @crm_source NVARCHAR(100), @erp_source NVARCHAR(100);
+	
 	BEGIN TRY
 		SET @batch_start_time = GETDATE();
+		SET @crm_source = N'path\to\dataset\datasets\source_crm\';
 		PRINT '================================================================';
 		PRINT 'Loading Bronze Layer';
 		PRINT '================================================================';
@@ -37,7 +40,7 @@ BEGIN
 
 		PRINT '>> Inserting Data Into: bronze.crm_cust_info';
 		BULK INSERT bronze.crm_cust_info
-		FROM 'C:\Users\moham\Desktop\DATA_Management_Project\sql-data-warehouse-project\datasets\source_crm\cust_info.csv'
+		FROM ''' + @crm_source + 'cust_info.csv'';
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -53,7 +56,7 @@ BEGIN
 
 		PRINT '>> Inserting Data Into: bronze.crm_prd_info';
 		BULK INSERT bronze.crm_prd_info
-		FROM 'C:\Users\moham\Desktop\DATA_Management_Project\sql-data-warehouse-project\datasets\source_crm\prd_info.csv'
+		FROM ''' + @crm_source + 'prd_info.csv''
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -69,7 +72,7 @@ BEGIN
 
 		PRINT '>> Inserting Data Into: bronze.crm_sales_details';
 		BULK INSERT bronze.crm_sales_details
-		FROM 'C:\Users\moham\Desktop\DATA_Management_Project\sql-data-warehouse-project\datasets\source_crm\sales_details.csv'
+		FROM ''' + @crm_source + 'sales_details.csv''
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -84,12 +87,13 @@ BEGIN
 		PRINT '----------------------------------------------------------------';
 
 		SET @start_time = GETDATE();
+		SET @erp_source = N'path\to\dataset\datasets\source_erp\';
 		PRINT '>> Truncating Table: bronze.erp_cust_az12';
 		TRUNCATE TABLE bronze.erp_cust_az12;
 
 		PRINT '>> Inserting Data Into: bronze.erp_cust_az12';
 		BULK INSERT bronze.erp_cust_az12
-		FROM 'C:\Users\moham\Desktop\DATA_Management_Project\sql-data-warehouse-project\datasets\source_erp\CUST_AZ12.csv'
+		FROM ''' + @erp_source + 'CUST_AZ12.csv''
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -105,7 +109,7 @@ BEGIN
 
 		PRINT '>> Inserting Data Into: bronze.erp_loc_a101';
 		BULK INSERT bronze.erp_loc_a101
-		FROM 'C:\Users\moham\Desktop\DATA_Management_Project\sql-data-warehouse-project\datasets\source_erp\LOC_A101.csv'
+		FROM ''' + @erp_source + 'LOC_A101.csv''
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -121,7 +125,7 @@ BEGIN
 
 		PRINT '>> Inserting Data Into: bronze.erp_px_cat_g1v2';
 		BULK INSERT bronze.erp_px_cat_g1v2
-		FROM 'C:\Users\moham\Desktop\DATA_Management_Project\sql-data-warehouse-project\datasets\source_erp\PX_CAT_G1V2.csv'
+		FROM ''' + @erp_source + 'PX_CAT_G1V2.csv''
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
