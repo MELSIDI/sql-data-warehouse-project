@@ -8,6 +8,12 @@ Script Purpose:
     - Truncates the bronze tables before loading data.
     - Uses the `BULK INSERT` command to load data from csv Files to bronze tables.
 
+Indication:
+	- Step 1: Identify Your Data Paths
+	- Step 2: Update the File Paths
+	- The Setting of the Sources Paths is on line 34 for the source_crm and the line 90 for the source_erp.
+
+
 Parameters:
     None. 
 	  This stored procedure does not accept any parameters or return any values.
