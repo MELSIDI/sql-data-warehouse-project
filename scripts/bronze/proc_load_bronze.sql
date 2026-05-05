@@ -11,7 +11,7 @@ Script Purpose:
 Indication:
 	- Step 1: Identify Your Data Paths
 	- Step 2: Update the File Paths
-	- The Setting of the Sources Paths is on line 34 for the source_crm and the line 90 for the source_erp.
+	- The Setting of the Sources Paths is on line 35 for the source_crm and the line 36 for the source_erp.
 
 
 Parameters:
