@@ -97,41 +97,41 @@ The Gold layer exposes a clean **star schema** optimized for analytical queries,
 ```
 sql-data-warehouse-project/
 │
-├── datasets/                 # Raw source data (CRM & ERP CSV files)
+├── datasets/                       # Raw source data (CRM & ERP CSV files)
 │   ├── source_crm/
-│   │   ├── cust_info.csv
-│   │   ├── prd_info.csv
-│   │   └── sales_details.csv
+│   │   ├── cust_info.csv           # Customer core information
+│   │   ├── prd_info.csv            # Product information
+│   │   └── sales_details.csv       # Sales transactions
 │   └── source_erp/
-│       ├── CUST_AZ12.csv
-│       ├── LOC_A101.csv
-│       └── PX_CAT_G1V2.csv
+│       ├── CUST_AZ12.csv           # Extra customer info (birthdate)
+│       ├── LOC_A101.csv            # Customer location (country)
+│       └── PX_CAT_G1V2.csv         # Product categories
 │
-├── docs/                     # Project documentation & diagrams
-│   ├── data_catalog.md       # Catalog of the Gold layer (tables & columns)
-│   └── diagrammes/           # Architecture & data model diagrams (.png)
+├── docs/                           # Project documentation & diagrams
+│   ├── data_catalog.md             # Catalog of the Gold layer (tables & columns)
+│   └── diagrammes/                 # Architecture & data model diagrams (.png)
 │       ├── Data_Warehouse_Architecture.drawio.png
 │       ├── DATA_FLOW.drawio.png
 │       ├── Integration_Model.drawio.png
 │       └── Sales_Data_Mart.drawio.png
 │
-├── scripts/                  # SQL scripts for the ETL pipeline
-│   ├── bronze/               # Load raw data into the Bronze layer
-│   │   ├── ddl_bronze.sql
-│   │   └── proc_load_bronze.sql
-│   ├── silver/               # Clean & transform data into the Silver layer
-│   │   ├── ddl_silver.sql
-│   │   └── proc_load_silver.sql
-│   ├── gold/                 # Build business-ready views (Gold layer)
-│   │   └── ddl_gold.sql
-│   └── init_database.sql
-│   
-├── tests/                    # Data quality checks & validation scripts
-│   ├── quality_checks_gold.sql
-│   └── quality_checks_silver.sql
+├── scripts/                        # SQL scripts for the ETL pipeline
+│   ├── init_database.sql           # Create the database and the layer schemas
+│   ├── bronze/                     # Load raw data into the Bronze layer
+│   │   ├── ddl_bronze.sql          # Bronze tables definition (DDL)
+│   │   └── proc_load_bronze.sql    # Stored procedure to load Bronze
+│   ├── silver/                     # Clean & transform data into the Silver layer
+│   │   ├── ddl_silver.sql          # Silver tables definition (DDL)
+│   │   └── proc_load_silver.sql    # Stored procedure to load Silver
+│   └── gold/                       # Build business-ready views (Gold layer)
+│       └── ddl_gold.sql            # Gold views definition (star schema)
 │
-├── LICENSE                   # MIT License 
-└── README.md                 # Project overview (this file)
+├── tests/                          # Data quality checks & validation scripts
+│   ├── quality_checks_silver.sql   # Data quality checks for the Silver layer
+│   └── quality_checks_gold.sql     # Data quality checks for the Gold layer
+│
+├── LICENSE                         # MIT License
+└── README.md                       # Project overview (this file)
 ```
 
 ---
