@@ -5,9 +5,9 @@
 ![Data Engineering](https://img.shields.io/badge/Data%20Engineering-2F855A?style=for-the-badge)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
-Welcome to the **Data Warehouse and Analytics Project** repository! 👋
+Welcome to the **Data Warehouse and Analytics Project** repository!
 
-This project demonstrates a comprehensive data warehousing and analytics solution — from building a modern data warehouse to generating actionable business insights. Designed as a **portfolio project**, it highlights industry best practices in **data engineering** and **analytics**.
+This project demonstrates a comprehensive data warehousing and analytics solution from building a modern data warehouse to generating actionable business insights. Designed as a **SQL AND ANALYTICS PRACTICE PROJECT**, it highlights industry best practices in **data engineering** and **analytics**.
 
 ---
 
@@ -46,9 +46,9 @@ The data warehouse follows the **Medallion Architecture** with three progressive
 
 | Layer | Purpose | Object Type | Load | Transformations | Data Model |
 |-------|---------|-------------|------|-----------------|------------|
-| 🥉 **Bronze** | Raw data, stored as-is from sources | Tables | Batch · Full Load · Truncate & Insert | None (as-is) | None |
-| 🥈 **Silver** | Cleaned & standardized data | Tables | Batch · Full Load · Truncate & Insert | Cleansing, Standardization, Normalization, Derived Columns, Enrichment | None |
-| 🥇 **Gold** | Business-ready data | Views | No Load | Integration, Aggregation, Business Logic | Star Schema · Flat Table · Aggregated Table |
+| **Bronze** | Raw data, stored as-is from sources | Tables | Batch · Full Load · Truncate & Insert | None (as-is) | None |
+| **Silver** | Cleaned & standardized data | Tables | Batch · Full Load · Truncate & Insert | Cleansing, Standardization, Normalization, Derived Columns, Enrichment | None |
+| **Gold** | Business-ready data | Views | No Load | Integration, Aggregation, Business Logic | Star Schema · Flat Table · Aggregated Table |
 
 **Sources:** CSV files from CRM and ERP systems.
 **Consumption:** BI & Reporting (Power BI), Ad-Hoc SQL Queries, and Machine Learning.
@@ -88,7 +88,7 @@ The Gold layer exposes a clean **star schema** optimized for analytical queries,
 - **`gold.dim_customers`** — customer dimension enriched with demographic & geographic data.
 - **`gold.dim_products`** — product dimension with attributes and categories.
 
-> 💡 **Sales Calculation:** `sales_amount = quantity × price`
+>  **Sales Calculation:** `sales_amount = quantity × price`
 
 ---
 
@@ -117,8 +117,6 @@ sql-data-warehouse-project/
 ├── README.md                 # Project overview (this file)
 └── LICENSE                   # MIT License
 ```
-
-> ℹ️ Adjust the folder names above to match your actual repository layout.
 
 ---
 
