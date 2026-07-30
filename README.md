@@ -98,6 +98,14 @@ The Gold layer exposes a clean **star schema** optimized for analytical queries,
 sql-data-warehouse-project/
 │
 ├── datasets/                 # Raw source data (CRM & ERP CSV files)
+│   ├── source_crm/
+│   │   ├── cust_info.csv
+│   │   ├── prd_info.csv
+│   │   └── sales_details.csv
+│   └── source_erp/
+│       ├── CUST_AZ12.csv
+│       ├── LOC_A101.csv
+│       └── PX_CAT_G1V2.csv
 │
 ├── docs/                     # Project documentation & diagrams
 │   ├── data_catalog.md       # Catalog of the Gold layer (tables & columns)
@@ -109,13 +117,21 @@ sql-data-warehouse-project/
 │
 ├── scripts/                  # SQL scripts for the ETL pipeline
 │   ├── bronze/               # Load raw data into the Bronze layer
+│   │   ├── ddl_bronze.sql
+│   │   └── proc_load_bronze.sql
 │   ├── silver/               # Clean & transform data into the Silver layer
-│   └── gold/                 # Build business-ready views (Gold layer)
-│
+│   │   ├── ddl_silver.sql
+│   │   └── proc_load_silver.sql
+│   ├── gold/                 # Build business-ready views (Gold layer)
+│   │   └── ddl_gold.sql
+│   └── init_database.sql
+│   
 ├── tests/                    # Data quality checks & validation scripts
+│   ├── quality_checks_gold.sql
+│   └── quality_checks_silver.sql
 │
-├── README.md                 # Project overview (this file)
-└── LICENSE                   # MIT License
+├── LICENSE                   # MIT License 
+└── README.md                 # Project overview (this file)
 ```
 
 ---
