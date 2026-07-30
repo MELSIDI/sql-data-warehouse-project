@@ -151,7 +151,7 @@ These insights empower stakeholders with key business metrics, enabling strategi
 
 A detailed description of every table and column in the **Gold layer** (dimensions and facts) is available here:
 
-➡️ [`docs/data_catalog.md`](docs/data_catalog.md)
+  [`docs/data_catalog.md`](docs/data_catalog.md)
 
 It documents `gold.dim_customers`, `gold.dim_products`, and `gold.fact_sales`, including data types and business descriptions.
 
