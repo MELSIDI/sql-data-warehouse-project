@@ -123,8 +123,11 @@ sql-data-warehouse-project/
 │   ├── silver/                     # Clean & transform data into the Silver layer
 │   │   ├── ddl_silver.sql          # Silver tables definition (DDL)
 │   │   └── proc_load_silver.sql    # Stored procedure to load Silver
-│   └── gold/                       # Build business-ready views (Gold layer)
-│       └── ddl_gold.sql            # Gold views definition (star schema)
+│   ├── gold/                       # Build business-ready views (Gold layer)
+│   │   └── ddl_gold.sql            # Gold views definition (star schema)
+│   └── data_analytics/             # Analytical reporting views (BI layer)
+│       ├── report_customers.sql    # Customer report: KPIs, VIP/Regular/New segments, age groups
+│       └── report_products.sql     # Product report: KPIs, High/Mid/Low-Performer segments
 │
 ├── tests/                          # Data quality checks & validation scripts
 │   ├── quality_checks_silver.sql   # Data quality checks for the Silver layer
