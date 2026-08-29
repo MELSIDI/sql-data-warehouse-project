@@ -132,8 +132,9 @@ sql-data-warehouse-project/
 │   │   ├── DATA_FLOW.drawio.png
 │   │   ├── Integration_Model.drawio.png
 │   │   └── Sales_Data_Mart.drawio.png
-│   └── dashboard/                  # Power BI dashboard screenshots
-│       └── Sales_Report.png
+│   └── dashboard/                  # Power BI files
+│       ├── DataWarehouse.pbix      # Power BI report file (data model, DAX measures & visuals)
+│       └── Sales_Report.png        # Dashboard screenshot preview
 │
 ├── scripts/                        # SQL scripts for the ETL pipeline
 │   ├── init_database.sql           # Create the database and the layer schemas
