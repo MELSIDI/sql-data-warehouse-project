@@ -2,6 +2,7 @@
 
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
 ![T-SQL](https://img.shields.io/badge/T--SQL-003B57?style=for-the-badge&logo=microsoft&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![Data Engineering](https://img.shields.io/badge/Data%20Engineering-2F855A?style=for-the-badge)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
@@ -18,6 +19,7 @@ This project demonstrates a comprehensive data warehousing and analytics solutio
 - [Data Flow](#-data-flow)
 - [Data Integration Model](#-data-integration-model)
 - [Sales Data Mart (Star Schema)](#-sales-data-mart-star-schema)
+- [Power BI Dashboard](#-power-bi-dashboard)
 - [Repository Structure](#-repository-structure)
 - [Project Requirements](#-project-requirements)
 - [Data Catalog](#-data-catalog)
@@ -35,6 +37,7 @@ The project covers the full lifecycle:
 - **Data Engineering** — designing and building the data warehouse using the **Medallion Architecture** (Bronze → Silver → Gold).
 - **Data Modeling** — integrating multiple sources into a user-friendly **star schema**.
 - **Data Analytics** — writing SQL-based analytics to surface insights on customer behavior, product performance, and sales trends.
+- **BI & Reporting** — visualizing the Gold layer in an interactive **Power BI** dashboard.
 
 ---
 
@@ -92,6 +95,21 @@ The Gold layer exposes a clean **star schema** optimized for analytical queries,
 
 ---
 
+## 📊 Power BI Dashboard
+
+The Gold layer is consumed directly by **Power BI** to build an interactive Sales Report, closing the loop from raw data to business insight.
+
+![Sales Report Power BI Dashboard](docs/dashboard/Sales_Report.png)
+
+**Key elements:**
+- **Customers KPI** — total unique customers (18K).
+- **Filters** — by Gender and Marital Status.
+- **Sales Amount by Year and Quarter** — trend line showing sales evolution from 2011 to 2014.
+- **Sales Amount by Category** — donut chart breaking down sales across Bikes, Accessories, and Clothing.
+- **Sales Amount by Country** — bar chart comparing total sales across markets (United States, Australia, United Kingdom, Germany, France, Canada).
+
+---
+
 ## 📂 Repository Structure
 
 ```
@@ -109,11 +127,13 @@ sql-data-warehouse-project/
 │
 ├── docs/                           # Project documentation & diagrams
 │   ├── data_catalog.md             # Catalog of the Gold layer (tables & columns)
-│   └── diagrammes/                 # Architecture & data model diagrams (.png)
-│       ├── Data_Warehouse_Architecture.drawio.png
-│       ├── DATA_FLOW.drawio.png
-│       ├── Integration_Model.drawio.png
-│       └── Sales_Data_Mart.drawio.png
+│   ├── diagrammes/                 # Architecture & data model diagrams (.png)
+│   │   ├── Data_Warehouse_Architecture.drawio.png
+│   │   ├── DATA_FLOW.drawio.png
+│   │   ├── Integration_Model.drawio.png
+│   │   └── Sales_Data_Mart.drawio.png
+│   └── dashboard/                  # Power BI dashboard screenshots
+│       └── Sales_Report.png
 │
 ├── scripts/                        # SQL scripts for the ETL pipeline
 │   ├── init_database.sql           # Create the database and the layer schemas
