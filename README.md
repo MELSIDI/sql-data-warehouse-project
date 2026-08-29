@@ -102,11 +102,11 @@ The Gold layer is consumed directly by **Power BI** to build an interactive Sale
 ![Sales Report Power BI Dashboard](docs/dashboard/Sales_Report.png)
 
 **Key elements:**
-- **Customers KPI** — total unique customers (18K).
-- **Filters** — by Gender and Marital Status.
-- **Sales Amount by Year and Quarter** — trend line showing sales evolution from 2011 to 2014.
-- **Sales Amount by Category** — donut chart breaking down sales across Bikes, Accessories, and Clothing.
-- **Sales Amount by Country** — bar chart comparing total sales across markets (United States, Australia, United Kingdom, Germany, France, Canada).
+- **Customers KPI** : total unique customers (18K).
+- **Filters** : by Gender and Marital Status.
+- **Sales Amount by Year and Quarter** : trend line showing sales evolution from 2011 to 2014.
+- **Sales Amount by Category** : donut chart breaking down sales across Bikes, Accessories, and Clothing.
+- **Sales Amount by Country** : bar chart comparing total sales across markets (United States, Australia, United Kingdom, Germany, France, Canada).
 
 ---
 
